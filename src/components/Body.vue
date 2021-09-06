@@ -31,18 +31,24 @@
         <div class="buttons">
           <div
             class="button button__ementa"
-            @click="mostrarEmenta = true"
+            @click="(mostrarEmenta = true), adicionarEmenta(item.ementa)"
           ></div>
           <div
             class="button button__objetivo"
             @click="mostrarObjetivos = true"
           ></div>
         </div>
+
         <Modal v-if="mostrarEmenta" @close="mostrarEmenta = false">
-          <h3 slot="header">EMENTA</h3>
+          <div slot="body">
+            <span class="modal__title">EMENTA</span>
+            <span class="modal__content">{{ ementa }}</span>
+          </div>
         </Modal>
         <Modal v-if="mostrarObjetivos" @close="mostrarObjetivos = false">
-          <h3 slot="header">OBJETIVOS</h3>
+          <ul v-for="i in item.objetivos" :key="i" slot="body">
+            <li>{{ i }}</li>
+          </ul>
         </Modal>
       </div>
     </div>
@@ -58,29 +64,35 @@ export default {
     return {
       mostrarEmenta: false,
       mostrarObjetivos: false,
+      ementa: "",
       conteudo: [
         {
           titulo: "Coronavírus e o Sistema Prisional",
           ementa:
             "Direitos humanos e à saúde no enfrentamento da pandemia. Caracterização da população carcerária e da organização do sistema prisional. Doenças respiratórias prevalentes, com ênfase na COVID-19, em ambiente prisional e suas consequências para a população privada de liberdade e para os trabalhadores. Experiências exitosas e legislação para a COVID-19.",
           objetivos: [
-            "Reconhecer a importância das ações de vigilância para prevenção e controle de síndromes gripais e respiratórias no sistema prisional; ",
-            "Entender as boas práticas relacionadas à investigação de surtos epidêmicos; ",
-            "Entender as medidas de contenção e mitigação de um surto de COVID-19.",
+            "Reconhecer os direitos à vida e à saúde como direitos essenciais da população privada de liberdade e dos trabalhadores do sistema prisional, no enfrentamento da pandemia;",
+            "Entender a composição da população carcerária e a organização do sistema prisional brasileiro;",
+            "Compreender o comportamento das doenças respiratórias no ambiente prisional.",
           ],
         },
         {
           titulo: "Plano de Contingência no Ambiente Prisional",
           ementa:
-            "Direitos humanos e à saúde no enfrentamento da pandemia. Caracterização da população carcerária e da organização do sistema prisional. Doenças respiratórias prevalentes, com ênfase na COVID-19, em ambiente prisional e suas consequências para a população privada de liberdade e para os trabalhadores. Experiências exitosas e legislação para a COVID-19.",
+            "Vigilância de Síndrome Gripal e Síndrome Respiratória Aguda Grave (SRAG). Investigação de surtos. Medidas para contenção e mitigação do surto por COVID-19. Medidas de biossegurança, de mitigação e sanitárias no ambiente prisional. Experiências exitosas e legislação para a COVID-19.",
           objetivos: [
-            "Reconhecer a importância das ações de vigilância para prevenção e controle de síndromes gripais e respiratórias no sistema prisional; ",
+            "Reconhecer a importância das ações de vigilância para prevenção e controle de síndromes gripais e respiratórias no sistema prisional;",
             "Entender as boas práticas relacionadas à investigação de surtos epidêmicos; ",
             "Entender as medidas de contenção e mitigação de um surto de COVID-19.",
           ],
         },
       ],
     };
+  },
+  methods: {
+    adicionarEmenta(titulo) {
+      this.ementa = titulo;
+    },
   },
 };
 </script>
@@ -173,5 +185,21 @@ div[class^="course-"] {
   width: 108px;
   background: url(../assets/button-objetivo.svg);
   background-repeat: no-repeat;
+}
+.modal__title {
+  font-size: 22px;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+}
+.modal__content {
+  font-size: 17px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
 }
 </style>

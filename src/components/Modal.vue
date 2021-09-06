@@ -15,7 +15,7 @@
 
           <div class="modal__footer">
             <slot name="footer">
-              default footer
+              
             </slot>
           </div>
         </div>
