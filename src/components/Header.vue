@@ -24,16 +24,15 @@ export default {
 
 <style scoped>
 .header {
-  padding: 48px;
-  display: flex;
-    
+  padding: 32px;
+  display: flex; 
 }
 .header__logo {
   width: 658px;
   height: 341px;
   left: 0px;
   top: 46px;
-  background: url(../assets/cerca.png); 
+  background: url(../assets/img-cerca.png); 
   border-radius: 0px 30px 30px 0px;
   flex: 1;
 }
