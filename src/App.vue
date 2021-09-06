@@ -6,17 +6,16 @@
 </template>
 
 <script>
-import Header from './components/Header.vue';
-import Body from './components/Body.vue';
-
+import Header from "./components/Header.vue";
+import Body from "./components/Body.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Header,
-    Body
-  }
-}
+    Body,
+  },
+};
 </script>
 
 <style>
@@ -27,7 +26,7 @@ export default {
 }
 
 #app {
-  font-family: Roboto,Avenir, Helvetica, Arial, sans-serif;
+  font-family: Roboto, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

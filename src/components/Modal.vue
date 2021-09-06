@@ -1,42 +1,36 @@
 <template>
-    <transition name="modal">
-        <div class="modal__mask">
-          <div class="modal__wrapper">
-            <div class="modal__container">
+  <transition name="modal">
+    <div class="modal__mask">
+      <div class="modal__wrapper">
+        <div class="modal__container">
+          <div class="modal__header">
+            <div class="modal__button" @click="$emit('close')"></div>
+          </div>
 
-              <div class="modal__header">
-                  <div class="modal__button" @click="$emit('close')"></div>
-              </div>
+          <div class="modal__body">
+            <slot name="body">
+              default body
+            </slot>
+          </div>
 
-              <div class="modal__body">
-                <slot name="body">
-                  default body
-                </slot>
-              </div>
-
-              <div class="modal__footer">
-                <slot name="footer">
-                  default footer
-                  
-                </slot>
-              </div>
-            </div>
+          <div class="modal__footer">
+            <slot name="footer">
+              default footer
+            </slot>
           </div>
         </div>
-      </transition>
+      </div>
+    </div>
+  </transition>
 </template>
 <script>
 export default {
-  name: 'Modal',
-  created() {
-    
-  },
-  methods:{
-    
-  }
-}
+  name: "Modal",
+  created() {},
+  methods: {},
+};
 </script>
-<style  scoped>
+<style scoped>
 .modal__mask {
   position: fixed;
   z-index: 9998;
@@ -59,7 +53,7 @@ export default {
   height: 274px;
   margin: 0px auto;
   padding: 20px 30px;
-  background-color: rgba(47, 128, 237, 0.6);;
+  background-color: rgba(47, 128, 237, 0.6);
   border-radius: 30px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   transition: all 0.3s ease;
@@ -67,9 +61,9 @@ export default {
 }
 
 .modal__header {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .modal__body {
@@ -79,7 +73,6 @@ export default {
 .modal__default-button {
   float: right;
 }
-
 
 .modal__enter {
   opacity: 0;
@@ -96,12 +89,10 @@ export default {
 }
 
 .modal__button {
-  cursor:pointer;
+  cursor: pointer;
   width: 42px;
   height: 42px;
   background: url(../assets/icon-close.svg);
   background-repeat: no-repeat;
-  
 }
-
 </style>
