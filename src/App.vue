@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <Body />
+    <Body /> 
   </div>
 </template>
 
@@ -32,7 +32,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin: auto;
-  max-width: 10000px;
+  max-width: 1200px;
   display: grid;
   grid-template-columns: 1fr;
   justify-content: center;
