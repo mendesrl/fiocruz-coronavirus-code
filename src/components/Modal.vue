@@ -95,4 +95,11 @@ export default {
   background: url(../assets/icon-close.svg);
   background-repeat: no-repeat;
 }
+@media (max-width: 860px) {
+  .modal__container {
+    max-width: 640px;
+    min-width: 300px;
+    height: auto;
+  }
+}
 </style>
