@@ -3,7 +3,7 @@
     <div class="body__logo">
       <img alt="Logo Fundação Oswaldo Cruz" src="../assets/img-logo.svg" />
     </div>
-    <div class="body__introduction">
+     <div class="body__introduction">
       <div class="introduction">
         <span class="introduction__title">APRESENTAÇÃO</span>
         <p class="introduction__content">
@@ -58,14 +58,14 @@
           </div>
         </Modal>
       </div>
-    </div>
+    </div> 
   </div>
 </template>
 
 <script>
 import Modal from "./Modal.vue";
 export default {
-  components: { Modal },
+   components: { Modal },
   name: "Body",
   data() {
     return {
@@ -221,8 +221,9 @@ ul.modal__content {
   .body__logo img {
     width: 350px;
   }
+  .introduction__image,
   .introduction {
-    padding: 32px;
+    padding: 32px 0;
   }
   .modal__title {
     font-size: 18px;
@@ -233,28 +234,25 @@ ul.modal__content {
   }
   
   .body__courses .title {
-    font-size: 18px;
+    font-size: 16px;
   }
   
   .body__courses .subtitle {
-    font-size: 24px;
+    font-size: 18px;
   }
 }
 @media (max-width: 768px) {
   .body__introduction {
     width: 100%;
     border-radius: 0px 0px 0px 0px;
-    flex-direction: column;
+    display: block;
   }
-}
-@media (max-width: 360px) {
-  .body__logo img {
-    width: 300px;
-  }
-}
-@media (max-width: 320px) {
   .body__logo img {
     width: 250px;
   }
+  .introduction__image {
+    display: none;
+  }
 }
+
 </style>
