@@ -232,7 +232,7 @@ ul.modal__content {
   padding-bottom: 48px;
 }
 .start {
-  padding: 12px;
+  padding: 16px;
   background: #2196f3;
   border-radius: 87px;
   cursor: pointer;
