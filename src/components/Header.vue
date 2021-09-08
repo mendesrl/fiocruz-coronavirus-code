@@ -6,7 +6,7 @@
       <p class="header__title--blue">
         Enfrentamento da Covid-19 no Sistema Prisional
       </p>
-      <p class="header__title--simple">Carga Horária: XX horas</p>
+      <p>Carga Horária: XX horas</p>
     </div>
   </div>
 </template>
@@ -14,8 +14,6 @@
 <script>
 export default {
   name: "Header",
-  created() {},
-  methods: {},
 };
 </script>
 
@@ -44,31 +42,55 @@ export default {
 }
 .header__title--spacing {
   font-size: 16px;
-  font-style: normal;
   font-weight: 400;
   line-height: 26px;
   letter-spacing: 0.6em;
   text-align: center;
+  padding-bottom: 8px;
 }
 .header__title--blue {
-  font-style: normal;
   font-weight: 900;
   font-size: 42px;
   align-items: center;
   text-align: center;
   color: #2f80ed;
+  padding-bottom: 8px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
   .header {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    margin: 0;
+    align-items: center;
+  }
+  .header__logo {
+    padding-bottom: 300px;
+    width: 100%;
+    border-radius: 30px;
+    background-size: cover;
   }
   .header__title--spacing {
-    font-size: 14px;
+    font-size: 16px;
   }
   .header__title--blue {
-    font-size: 28px;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0;
+  }
+  .header__title--spacing {
+    letter-spacing: 0.4em;
+  }
+}
+
+@media (max-width: 320px) {
+  .header__title {
+    margin: 16px;
   }
 }
 </style>

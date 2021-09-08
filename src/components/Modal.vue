@@ -14,9 +14,7 @@
           </div>
 
           <div class="modal__footer">
-            <slot name="footer">
-              default footer
-            </slot>
+            <slot name="footer"> </slot>
           </div>
         </div>
       </div>
@@ -67,7 +65,7 @@ export default {
 }
 
 .modal__body {
-  margin: 20px 0;
+  margin: 16px 0;
 }
 
 .modal__default-button {
@@ -94,5 +92,12 @@ export default {
   height: 42px;
   background: url(../assets/icon-close.svg);
   background-repeat: no-repeat;
+}
+@media (max-width: 860px) {
+  .modal__container {
+    max-width: 640px;
+    min-width: 300px;
+    height: auto;
+  }
 }
 </style>
