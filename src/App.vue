@@ -15,6 +15,21 @@ export default {
     Header,
      Body,
   },
+   created () {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
+  methods: {
+    handleScroll () {
+     if (window.scrollY > 50) {
+       let elemento = document.querySelector('div.body__introduction')
+       elemento.setAttribute("style", "opacity: 1; transform: translate3d(0, -10px, 0)")
+    }
+     return window.scrollY > 100;
+    }
+  },
 };
 </script>
 
