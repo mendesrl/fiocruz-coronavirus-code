@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <Body /> 
+     <Body />  
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
   name: "App",
   components: {
     Header,
-    Body,
+     Body,
   },
 };
 </script>
@@ -36,5 +36,11 @@ export default {
   display: grid;
   grid-template-columns: 1fr;
   justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  #app {
+    margin: 32px;
+  }
 }
 </style>
