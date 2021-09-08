@@ -3,7 +3,7 @@
     <div class="body__logo">
       <img alt="Logo Fundação Oswaldo Cruz" src="../assets/img-logo.svg" />
     </div>
-     <div class="body__introduction">
+    <div class="body__introduction">
       <div class="introduction">
         <span class="introduction__title">APRESENTAÇÃO</span>
         <p class="introduction__content">
@@ -58,14 +58,19 @@
           </div>
         </Modal>
       </div>
-    </div> 
+    </div>
+    <div class="body__button">
+      <div class="start">
+        <span>VAMOS COMEÇAR?</span>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import Modal from "./Modal.vue";
 export default {
-   components: { Modal },
+  components: { Modal },
   name: "Body",
   data() {
     return {
@@ -118,6 +123,11 @@ export default {
   display: flex;
   margin-top: 48px;
   max-width: 1136px;
+  opacity: 0;
+  transform: translateZ(0);
+  perspective: 1000px;
+  backface-visibility: hidden;
+  transition: 1.5s all cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 .introduction {
   flex: 1;
@@ -172,7 +182,7 @@ div[class^="course-"] {
   justify-content: center;
   padding: 48px;
 }
-
+.body__button,
 .buttons {
   display: flex;
 }
@@ -180,7 +190,7 @@ div[class^="course-"] {
   height: 72px;
   margin: 16px;
 }
-
+.start:hover,
 .button:hover {
   cursor: pointer;
   opacity: 0.5;
@@ -216,6 +226,27 @@ div[class^="course-"] {
 ul.modal__content {
   display: block;
 }
+.body__button {
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 48px;
+}
+.start {
+  padding: 12px;
+  background: #2196f3;
+  border-radius: 87px;
+  cursor: pointer;
+}
+.start span {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 1.25px;
+  color: #ffffff;
+}
 
 @media (max-width: 860px) {
   .body__logo img {
@@ -232,11 +263,11 @@ ul.modal__content {
     font-size: 14px;
     margin: 16px;
   }
-  
+
   .body__courses .title {
     font-size: 16px;
   }
-  
+
   .body__courses .subtitle {
     font-size: 18px;
   }
@@ -254,5 +285,4 @@ ul.modal__content {
     display: none;
   }
 }
-
 </style>
