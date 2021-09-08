@@ -72,10 +72,19 @@ export default {
     background-size: cover;
   }
   .header__title--spacing {
-    font-size: 18px;
+    font-size: 16px;
   }
   .header__title--blue {
     font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0;
+  }
+  .header__title--spacing {
+    letter-spacing: 0.4em;
   }
 }
 
